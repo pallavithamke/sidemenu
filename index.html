@@ -1,0 +1,96 @@
+<html lang="en" >
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Angular Material style sheet -->
+
+
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="node_modules/angular-material/angular-material.min.css" rel="stylesheet">
+    <link href="node_modules/angular-material-sidemenu/dest/angular-material-sidemenu.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
+
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.js"></script>
+    <script src="node_modules/angular-aria/angular-aria.js"></script>
+    <script src="node_modules/angular-material/angular-material.js"></script>
+    <script src="node_modules/angular-material-sidemenu/dest/angular-material-sidemenu.js"></script>
+
+    <!-- Your application bootstrap  -->
+    <script src="js/app.js"></script>
+</head>
+<body ng-app="ngMaterialSidemenu" ng-controller="AppController as app" ng-cloak layout="column">
+<md-toolbar class="main-header md-whiteframe-3dp">
+    <div class="md-toolbar-tools">
+        <h1 flex>Angular Material Sidemenu</h1>
+    </div>
+</md-toolbar>
+<section layout="row" flex="">
+    <md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="4" id="leftSideNav" md-disable-backdrop="true" style="">
+        <md-toolbar class="md-theme-indigo" layout="row">
+            <h1 class="md-toolbar-tools">Sidenav Left</h1>
+            <span flex></span>
+            <md-button ng-click="close()">Close</md-button>
+        </md-toolbar>
+
+        <md-content md-scroll-y="" layout="column" flex="" style="">
+
+            <md-sidemenu locked="true" >
+
+                <md-subheader class="md-no-sticky" md-icon="supervisor_account" style="font-size: 22px;background-color: #267ED5; color: black;margin-bottom: 18px;">
+                    Caption
+                </md-subheader>
+                <md-sidemenu-group  style="margin-top: 30px;">
+                    <md-sidemenu-content md-icon="home" md-heading="Home" md-arrow="true" class="md-sidemenu-content11" ng-click="show('home')">
+                        <md-sidemenu-button style="margin-left: 115px;" href="#">Submenu 1</md-sidemenu-button>
+                        <md-sidemenu-button style="margin-left: 115px;" href="#">Submenu 2</md-sidemenu-button>
+                        <md-sidemenu-button style="margin-left: 115px;" href="#">Submenu 3</md-sidemenu-button>
+                    </md-sidemenu-content>
+                    <md-sidemenu-content md-icon="android" md-heading="Android" md-arrow="true" class="md-sidemenu-content11" ng-click="show('work')">
+                        <md-sidemenu-button style="margin-left: 115px;" href="#">Submenu 1</md-sidemenu-button>
+                        <md-sidemenu-button style="margin-left: 115px;" href="#">Submenu 2</md-sidemenu-button>
+                        <md-sidemenu-button style="margin-left: 115px;" href="#">Submenu 3</md-sidemenu-button>
+                    </md-sidemenu-content>
+                    <md-sidemenu-content md-icon="account_circle" md-heading="Account_circle" md-arrow="true" class="md-sidemenu-content11 "  ng-click="show('account_circle')">
+                        <md-sidemenu-button style="margin-left: 115px;" href="#">Submenu 1</md-sidemenu-button>
+                        <md-sidemenu-button style="margin-left: 115px;" href="#">Submenu 2</md-sidemenu-button>
+                        <md-sidemenu-button style="margin-left: 115px;"  href="#">Submenu 3</md-sidemenu-button>
+                    </md-sidemenu-content>
+
+                    <md-sidemenu-content md-icon="supervisor_account" md-heading="Supervisor_account" md-arrow="true" class="md-sidemenu-content11 "  ng-click="show('supervisor_account')">
+                        <md-sidemenu-button style="margin-left: 115px;" href="#">Submenu 1</md-sidemenu-button>
+                    </md-sidemenu-content>
+                    <md-sidemenu-content md-icon="local_airport" md-heading="Local_airport" md-arrow="true" class="md-sidemenu-content11 "  ng-click="show('local_airport')">
+                        <md-sidemenu-button style="margin-left: 115px;" href="#">Submenu 1</md-sidemenu-button>
+                        <md-sidemenu-button style="margin-left: 115px;" href="#">Submenu 2</md-sidemenu-button>
+                        <md-sidemenu-button style="margin-left: 115px;" href="#">Submenu 3</md-sidemenu-button>
+                    </md-sidemenu-content>
+                </md-sidemenu-group>
+            </md-sidemenu>
+        </md-content>
+    </md-sidenav>
+    <md-content flex="" layout-padding="" layout="column" layout-align="top center">
+        <md-button ng-click="toggleLeft()" class="md-primary">
+            Toggle left
+        </md-button>
+        <div ng-switch="toShow">
+            <div ng-switch-when="home">
+                Home!
+            </div>
+            <div ng-switch-when="work">
+                Android!
+            </div>
+            <div ng-switch-when="account_circle">
+                Account Circle!
+            </div>
+            <div ng-switch-when="supervisor_account">
+                Supervisor Account!
+            </div>
+            <div ng-switch-when="local_airport">
+                Local Airport!
+            </div>
+        </div>
+    </md-content>
+</section>
+</body>
+</html>
